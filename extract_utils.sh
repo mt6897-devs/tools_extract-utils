@@ -1401,7 +1401,7 @@ function parse_file_list() {
             [[ "$TARGET_ENABLE_CHECKELF" == "true" &&
                 ("$SRC_FILE" == *"lib/"*".so" ||
                 "$SRC_FILE" == *"lib64/"*".so" ||
-                "$SRC_FILE" == *"bin/"* ||
+                ("$SRC_FILE" == *"bin/"* && "$SRC_FILE" != *".db") ||
                 "$SRC_FILE" == *"lib/rfsa"*) ]] ||
             [[ "$SRC_FILE" == *"etc/vintf/manifest/"* ]]; then
             IS_PRODUCT_PACKAGE=true
